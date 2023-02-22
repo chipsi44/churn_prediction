@@ -8,4 +8,14 @@ BankChurners.db
 EDA.py
 AMJar.py
 __pycache__
-AutoML_1
+AutoML_1/
+Classification_model.py
+Classification_model_selection.py
+Classification_model_selection.ipynb
+Classification_model_selection_pipeline.py
+Classification_model_parameters.py
+Classification_model.pkl
+Clustering_model.ipynb
+Clustering_model_selection.py
+Clustering_model_selection_pipeline.py
+Clustering_model_parameters.py
