@@ -30,8 +30,8 @@ def get_data_from_sqlite_db():
 df = get_data_from_sqlite_db()
 
 # Predictives features
-features = ['Total_Trans_Amt','Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Total_Revolving_Bal', 'Credit_Limit', 
-            'Months_on_book', 'Avg_Open_To_Buy', 'Total_Relationship_Count', 'Avg_Utilization_Ratio', 
+features = ['Total_Trans_Amt','Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Total_Amt_Chng_Q4_Q1', 'Total_Revolving_Bal', 
+            'Credit_Limit', 'Months_on_book', 'Total_Relationship_Count', 'Avg_Utilization_Ratio', 
             'Contacts_Count_12_mon', 'Months_Inactive_12_mon', 'Dependent_count']
 
 # Isolate the feature to predict from the predictive features
@@ -81,7 +81,7 @@ def evaluate_model(pipe, X_test, y_test):
 
 evaluate_model(pipe, X_test, y_test)
 
-# Prediction
+# Prediction - input is pandas.DataFrame of shape (1,12)
 # y_df = pd.DataFrame(y)
 # predict123 = pipe.predict(X.iloc[[6292], :])
 # result123 = y_df.iloc[6292,0]

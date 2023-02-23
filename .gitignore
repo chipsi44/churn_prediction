@@ -21,3 +21,4 @@ Clustering_model_selection_pipeline.py
 Clustering_model_parameters.py
 Clustering_model_with_pipeline.py
 Feature importance LGBM.png
+Pairplot_12features_3clusters.png
