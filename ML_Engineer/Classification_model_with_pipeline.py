@@ -38,8 +38,6 @@ features = ['Total_Trans_Amt','Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Total_Re
 X = pd.concat([df[features]], axis=1)
 y = np.where(df["Attrition_Flag"] == "Attrited Customer", 1, 0)
 
-print(X.dtypes)
-
 # Split  database into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
