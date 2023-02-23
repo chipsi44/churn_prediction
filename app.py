@@ -1,4 +1,6 @@
 from flask import Flask, render_template,request
+import pandas as pd
+
 
 app = Flask(__name__)
 
@@ -14,7 +16,7 @@ def predict():
         list_val = []
         for key,value in request.form.items() :
             list_val.append(value)
-            print(value)
+        value_to_predict = pd.Series(list_val)
         return render_template("index.html", prediction = "waiting for ML", args = list_val)
 
 app.run(debug=False)

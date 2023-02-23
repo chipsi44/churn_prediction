@@ -15,8 +15,24 @@ label {
   display: block;
   margin-bottom: 5px;
 }
-
 input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type="int"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+input[type="float"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;

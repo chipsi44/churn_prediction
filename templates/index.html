@@ -57,97 +57,82 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         <div class="form-column">
           <!-- Using the if prediction to keep the elem in my form, because I'm bad at Php and JS -->
           {% if prediction %}
-          <label for="fruit">Choose a fruit:</label>
-          <select id="fruit" name="fruit">
-            <option value="apple">Apple</option>
-            <option value="banana" selected>Banana</option>
-            <option value="orange">Orange</option>
-          </select>
+          <label for="Total_Trans_Amt">Total Trans Amt</label>
+          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt" value = {{ args[0] }}>
   
-          <label for="input2">Argument 2</label>
-          <input type="text" id="input2" name="input2" value = {{ args[1] }}>
+          <label for="Total_Trans_Ct">Total Trans Ct</label>
+          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct" value = {{ args[1] }}>
   
-          <label for="input3">Argument 3</label>
-          <input type="text" id="input3" name="input3" value = {{ args[2] }}>
+          <label for="Total_Ct_Chng_Q4_Q1"> Total Ct Chng Q4_Q1</label>
+          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" value = {{ args[2] }}>
   
-          <label for="input4">Argument 4</label>
-          <input type="text" id="input4" name="input4" value = {{ args[3] }}>
+          <label for="Total_Revolving_Bal">Total Revolving Bal</label>
+          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal" value = {{ args[3] }}>
   
-          <label for="input5">Argument 5</label>
-          <input type="text" id="input5" name="input5" value = {{ args[4] }}>
+          <label for="Credit_Limit">Credit Limit</label>
+          <input type="float" id="Credit_Limit" name="Credit_Limit" value = {{ args[4] }}>
   
-          <label for="input6">Argument 6</label>
-          <input type="text" id="input6" name="input6" value = {{ args[5] }}>
+          <label for="Months_on_book">Months on book</label>
+          <input type="int" id="Months_on_book" name="Months_on_book" value = {{ args[5] }}>
         </div>
         <div class="form-column">
-          <p>Type: 
-            <input type="radio" name="type" value="HOUSE" checked> HOUSE 
-            <input type="radio" name="type" value="APARTMENT"> APARTMENT
-          </p>
+    
+          <label for="Avg_Open_To_Buy">Avg Open To Buy</label>
+          <input type="float" id="Avg_Open_To_Buy" name="Avg_Open_To_Buy" value = {{ args[6] }}>
   
-          <label for="input8">Argument 8</label>
-          <input type="text" id="input8" name="input8" value = {{ args[7] }}>
+          <label for="Total_Relationship_Count">Total Relationship Count</label>
+          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count" value = {{ args[7] }}>
   
-          <label for="input9">Argument 9</label>
-          <input type="text" id="input9" name="input9" value = {{ args[8] }}>
+          <label for="Avg_Utilization_Ratio">Avg Utilization Ratio</label>
+          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" value = {{ args[8] }}>
   
-          <label for="input10">Argument 10</label>
-          <input type="text" id="input10" name="input10" value = {{ args[9] }}>
+          <label for="Contacts_Count_12_mon">Contacts Count 12 mon</label>
+          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" value = {{ args[9] }}>
   
-          <label for="input11">Argument 11</label>
-          <input type="text" id="input11" name="input11" value = {{ args[10] }}>
-  
-          <label for="input12">Argument 12</label>
-          <input type="text" id="input12" name="input12" value = {{ args[11] }}>
+          <label for="Months_Inactive_12_mon">Months Inactive 12 mon</label>
+          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" value = {{ args[10] }}>
+
+          <label for="Dependent_count">Dependent count</label>
+          <input type="int" id="Dependent_count" name="Dependent_count" value = {{ args[11] }}>
         </div>
           {% else %}
-          <label for="fruit">Choose a fruit:</label>
-          <select id="fruit" name="fruit">
-            <option value="apple">Apple</option>
-            <option value="banana" selected>Banana</option>
-            <option value="orange">Orange</option>
-          </select>
+          <label for="Total_Trans_Amt">Total Trans Amt</label>
+          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt">
   
-          <label for="input2">Argument 2</label>
-          <input type="text" id="input2" name="input2">
+          <label for="Total_Trans_Ct">Total Trans Ct</label>
+          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct">
   
-          <label for="input3">Argument 3</label>
-          <input type="text" id="input3" name="input3">
+          <label for="Total_Ct_Chng_Q4_Q1"> Total Ct Chng Q4_Q1</label>
+          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1">
   
-          <label for="input4">Argument 4</label>
-          <input type="text" id="input4" name="input4">
+          <label for="Total_Revolving_Bal">Total Revolving Bal</label>
+          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal">
   
-          <label for="input5">Argument 5</label>
-          <input type="text" id="input5" name="input5">
+          <label for="Credit_Limit">Credit Limit</label>
+          <input type="float" id="Credit_Limit" name="Credit_Limit">
   
-          <label for="input6">Argument 6</label>
-          <input type="text" id="input6" name="input6">
-
-          <label for="input7">Argument 7</label>
-          <input type="text" id="input7" name="input7">
+          <label for="Months_on_book">Months on book</label>
+          <input type="int" id="Months_on_book" name="Months_on_book">
         </div>
         <div class="form-column">
-          <p>Type: 
-            <input type="radio" name="type" value="HOUSE" checked> HOUSE 
-            <input type="radio" name="type" value="APARTMENT"> APARTMENT
-          </p>
+
+          <label for="Avg_Open_To_Buy">Avg Open To Buy</label>
+          <input type="float" id="Avg_Open_To_Buy" name="Avg_Open_To_Buy">
   
-          <label for="input8">Argument 8</label>
-          <input type="text" id="input8" name="input8">
+          <label for="Total_Relationship_Count">Total Relationship Count</label>
+          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count">
   
-          <label for="input9">Argument 9</label>
-          <input type="text" id="input9" name="input9">
+          <label for="Avg_Utilization_Ratio">Avg Utilization Ratio</label>
+          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio">
   
-          <label for="input10">Argument 10</label>
-          <input type="text" id="input10" name="input10">
+          <label for="Contacts_Count_12_mon">Contacts Count 12 mon</label>
+          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon">
   
-          <label for="input11">Argument 11</label>
-          <input type="text" id="input11" name="input11">
-  
-          <label for="input12">Argument 12</label>
-          <input type="text" id="input12" name="input12">
-          <label for="input14">Argument 14</label>
-          <input type="text" id="input14" name="input14">
+          <label for="Months_Inactive_12_mon">Months Inactive 12 mon</label>
+          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon">
+
+          <label for="Dependent_count">Dependent count</label>
+          <input type="int" id="Dependent_count" name="Dependent_count">
         </div>
         {% endif %}
         <div class="form-footer">
@@ -161,7 +146,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       {% endif %}
     </div>
     <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Info about the form : The type and choose a fruit doesn't keep track of the previous choice of the user</p>
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Info about the form</p>
       <p class="w3-border w3-padding-large w3-padding-64 w3-center">Info about the form</p>
     </div>
   </div>
