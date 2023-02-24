@@ -20,7 +20,8 @@ Here are the steps that were performed for the deployment :
 * Develop a website featuring a form that enables users to make predictions using the model. In addition, allocate space for the dashboard that will be provided by my data analyst.
 * Generate a Dockerfile to facilitate the creation of a Docker image for deployment on Render.com. Please note that creating the Docker image is intended for local testing purposes to ensure that the website functions as expected before deployment on Render.com.
 * Integrate the functionalities developed by the ML engineer, including the prediction model and the dashboard from the data analyst, into the website.
-
+* Perform thorough testing on the Docker image to ensure that all requirements are met, the prediction model functions correctly, and that the dashboard updates automatically.
+* Now that everything work we can deploy on render.com ! 
 ## Data Analyst part
 
 Actually Working
