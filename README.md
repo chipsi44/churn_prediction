@@ -1,5 +1,5 @@
 # churn_prediction
-## The mission : 
+## **The mission :** 
 
 An important financial institution is interested in analyzing its client database to increase the revenue generated from credit cardholders. They are concerned about customers closing their bank accounts after accepting products from other institutions.
 
@@ -8,6 +8,22 @@ The churn rate is above 15% and increasing, the CEO urges the marketing team to 
 **What is Churn Rate ?**
 
 *The churn rate, also known as the rate of attrition or customer churn, is the rate at which customers stop doing business with an entity. It is most commonly expressed as the percentage of service subscribers who discontinue their subscriptions within a given time period.*
+
+## **How to ?** 
+
+After the formation of a team with a data engineer, a machine learning engineer, and a data analyst, it is essential to ensure collaboration between the members.
+
+**The data engineers :** 
+- Build a database from the customer data.
+- Deployment part.
+
+**The ML engineers :**
+- Predict those clients with more propensity to close their bank account with the financial institution.
+- Build machine learning models for classification and/or clustering.
+
+**The Data analysts :**
+- Build a dashboard with data insights and KPIs.
+- Create a tableau with tableau public.
 
 ## **Data Engineer part :** 
 
@@ -22,10 +38,27 @@ Here are the steps that were performed for the deployment :
 * Integrate the functionalities developed by the ML engineer, including the prediction model and the dashboard from the data analyst, into the website.
 * Perform thorough testing on the Docker image to ensure that all requirements are met, the prediction model functions correctly, and that the dashboard updates automatically.
 * Now that everything work we can deploy on render.com ! 
-## Data Analyst part
+## **Data Analysts part :**
 
-Actually Working
+Actually Working !
 
-## Ml Engineer
+## **Ml Engineer part :**
 
-Actually Working
+Actually Working !
+
+## **Branch info :**
+
+To be done.
+
+## **Web site visuals and explanation :**
+
+To be done.
+
+## **Contributors :**
+- **Data Engineers :** Cyril Verwimp
+- **ML Engineers :** Maïté Rolin
+- **Data Analysts :** Sacha Jumpertz
+
+## **Timeline :**
+
+To be done.
