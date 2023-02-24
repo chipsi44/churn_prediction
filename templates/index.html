@@ -27,8 +27,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-theme-l1">Churn Prediction : </a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Form and Dashboard </a>
-    
+    <a href="#ancre_form" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Form</a>
+    <a href="#ancre_dashboard" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Dashboard</a>
   </div>
 </div>
 
@@ -52,7 +52,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Form</h1>
+      <h1 id="ancre_form" class="w3-text-teal">Form</h1>
       <form id="my-form" action="/" method="post">
         <div class="form-column">
           <!-- Using the if prediction to keep the elem in my form, because I'm bad at Php and JS -->
@@ -159,12 +159,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Dashboard</h1>
-      <div class='tableauPlaceholder' id='viz1677011741669' style='position: relative'><noscript><a href='#'><img alt='Story data churn impact 1.0 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;32&#47;326B9ZRHB&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;326B9ZRHB' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;32&#47;326B9ZRHB&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677011741669');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <h1 id ="ancre_dashboard" class="w3-text-teal">Dashboard</h1>
+      <div class='tableauPlaceholder' id='viz1677011741669' style='position: relative'><noscript><a href='#'><img alt='Story data churn impact 1.0 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;32&#47;326B9ZRHB&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;326B9ZRHB' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;32&#47;326B9ZRHB&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object>
+      </div>                
+      <script type='text/javascript'>
+      var divElement = document.getElementById('viz1677011741669');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      vizElement.style.width='1016px';vizElement.style.height='991px';
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
   
     </div>
     <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Info about the graph</p>
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Info about the Dashboard</p>
     </div>
   </div>
 
