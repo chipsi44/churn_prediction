@@ -13,7 +13,7 @@ def predict():
     if request.method == "GET":
         # If the request method is GET, return the index.html template
         print("ALIVE")
-        return render_template("index.html")
+        return render_template("index.html",cluster = 1)
     else:
         # If the request method is POST, load the pre-trained model and use it to make a prediction
         file_pckl = open('Classification_model_pipeline.pkl', 'rb')
@@ -50,7 +50,7 @@ def predict():
         prediction_cluster = reponse_cluster[0]
         # Return the index.html template with the prediction and user inputs
         print(reponse_cluster)
-        return render_template("index.html", prediction=reponse, prediction_cluster=prediction_cluster,cluster_rate = dic_prop_cluster[prediction_cluster], args=list_val)
+        return render_template("index.html", cluster = 0 ,prediction=reponse, prediction_cluster=prediction_cluster,cluster_rate = dic_prop_cluster[prediction_cluster], args=list_val)
 
 # Start the Flask app
 app.run(debug=False)
