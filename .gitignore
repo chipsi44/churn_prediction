@@ -5,7 +5,7 @@ BankChurners.db
 
 
 
-EDA.py
+EDA.ipynb
 AMJar.py
 __pycache__
 AutoML_1/
@@ -21,4 +21,6 @@ Clustering_model_selection_pipeline.py
 Clustering_model_parameters.py
 Clustering_model_with_pipeline.py
 Feature importance LGBM.png
+Pairplot_allfeatures_attrition.png
 Pairplot_12features_3clusters.png
+Elbow_silhouette_KMeans_clustering.png
