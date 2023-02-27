@@ -144,7 +144,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         </div>
       </form>
       {% if prediction %}
-      <h3>Prediction : {{ prediction }} </h3>
+      <h3>
+        The customer is part of the cluster {{ prediction_cluster }}, 
+        which has a churning rate of {{ cluster_rate }}% and is {{ prediction }} likely to churn.
+      </h3>
       {% else %}
     <h3>No prediction made at this time.</h3>
       {% endif %}
