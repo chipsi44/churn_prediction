@@ -17,8 +17,9 @@ def predict():
     else:
         # If the request method is POST, load the pre-trained model and use it to make a prediction
         file_pckl = open('Classification_model_pipeline.pkl', 'rb')
+        file_pckl_cluster = open('Clustering_model_pipeline.pkl', 'rb')
         model = pickle.load(file_pckl)
-
+        model_cluster = pickle.load(file_pckl_cluster)
         # Get the user inputs from the form and create a dictionary of values
         dic_val = {}
         list_val = []
@@ -31,7 +32,7 @@ def predict():
         
         # Use the pre-trained model to make a prediction
         reponse = model.predict(value_to_predict)
-
+        reponse_cluster = model_cluster.predict(value_to_predict)
         # Convert the prediction to a human-readable string and return it to the user
         if reponse[0] == 1: 
             reponse = 'Customer may churn'
@@ -39,6 +40,7 @@ def predict():
             reponse = "Customer is not likely to churn"
         
         # Return the index.html template with the prediction and user inputs
+        print(reponse_cluster)
         return render_template("index.html", prediction=reponse, args=list_val)
 
 # Start the Flask app
