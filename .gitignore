@@ -17,10 +17,11 @@ Classification_model_parameters.py
 Classification_model.pkl
 Clustering_model.ipynb
 Clustering_model_selection.py
-Clustering_model_selection_pipeline.py
 Clustering_model_parameters.py
-Clustering_model_with_pipeline.py
 Feature importance LGBM.png
 Pairplot_allfeatures_attrition.png
 Pairplot_12features_3clusters.png
+Pairplot_12features_6clusters.png
 Elbow_silhouette_KMeans_clustering.png
+Clustering_EDA.ipynb
+EDA_cluster3.ipynb
