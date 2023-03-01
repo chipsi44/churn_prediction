@@ -19,23 +19,7 @@ After the formation of a team with a data engineer, a machine learning engineer,
 
 **The ML engineers :**
 - Predict those clients with more propensity to close their bank account with the financial institution.
-- Build machine learning models for classification and/or clustering.
-
-**The Data analysts :**
-- Build a dashboard with data insights and KPIs.
-- Create a tableau with tableau public.
-
-## Data Engineer part
-
-After the formation of a team with a data engineer, a machine learning engineer, and a data analyst, it is essential to ensure collaboration between the members.
-
-**The data engineers :** 
-- Build a database from the customer data.
-- Deployment part.
-
-**The ML engineers :**
-- Predict those clients with more propensity to close their bank account with the financial institution.
-- Build machine learning models for classification and/or clustering.
+- Build machine learning models for classification and clustering.
 
 **The Data analysts :**
 - Build a dashboard with data insights and KPIs.
