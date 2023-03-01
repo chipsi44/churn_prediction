@@ -27,7 +27,7 @@ After the formation of a team with a data engineer, a machine learning engineer,
 
 ## **Data Engineer part :** 
 
-**Written by Cyril Verwimp**
+**Written by [Cyril Verwimp](https://www.linkedin.com/in/cyril-verwimp-8a0457208/)**
 
 ### **CSV to DB**
 The first step of the project is to obtain the data from this Kaggle [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers) . The data will then be transformed and loaded into a relational database for further analysis.
@@ -53,7 +53,7 @@ Actually Working !
 
 ## **Ml Engineer part :**
 
-**Written by Maïté Rolin**
+**Written by [Maïté Rolin](https://www.linkedin.com/in/ma%C3%AFt%C3%A9-r-71290613/)**
 
 To address the business need, we decided to work with two different models, a classification model and a clustering model.\
 The classification model selected after testing of several models and parameters fine-tuning is a light GBM model. It is a fast, distributed, high-performance gradient boosting framework supported decision tree algorithm. Following features were used to fit the model: Total_Trans_Amt,Total_Trans_Ct, Total_Ct_Chng_Q4_Q1, Total_Amt_Chng_Q4_Q1, Total_Revolving_Bal, Credit_Limit, Months_on_book, Total_Relationship_Count, Avg_Utilization_Ratio, Contacts_Count_12_mon, Months_Inactive_12_mon and Dependent_count. All these features are bank-related numerical features. The Avg_Open_To_Buy and Customer_Age features where removed due to high correlation with Credit_Limit and Months_on_book.
@@ -95,9 +95,9 @@ This branch is specifically dedicated to the deployment phase of our project, as
 To be done.
 
 ## **Contributors :**
-- **Data Engineers :** Cyril Verwimp
-- **ML Engineers :** Maïté Rolin
-- **Data Analysts :** Sacha Jumpertz
+- **Data Engineers :** [Cyril Verwimp](https://www.linkedin.com/in/cyril-verwimp-8a0457208/)
+- **ML Engineers :** [Maïté Rolin](https://www.linkedin.com/in/ma%C3%AFt%C3%A9-r-71290613/)
+- **Data Analysts :** [Sacha Jumpertz](https://www.linkedin.com/in/sacha-jumpertz-33ba3623b/)
 
 ## **Timeline :**
 
