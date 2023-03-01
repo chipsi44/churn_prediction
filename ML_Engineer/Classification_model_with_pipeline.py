@@ -50,13 +50,13 @@ def dataset_balancing(X, y):
 X_train, y_train = dataset_balancing(X_train, y_train)
 
 # Pipeline including preprocessing of numerical and categorical features and classification model
-numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
+numeric_features = X.select_dtypes(include=['number']).columns.tolist()
 numeric_transformer = Pipeline(
     steps=[("imputer", SimpleImputer(strategy='mean')), 
            ("scaler", StandardScaler())]
 )
 
-categorical_features = X.select_dtypes(include=['object', 'bool']).columns.tolist()
+categorical_features = X.select_dtypes(exclude=['number']).columns.tolist()
 categorical_transformer = Pipeline(
     steps=[("imputer", SimpleImputer(strategy='most_frequent')),
            ("encoder", OneHotEncoder(handle_unknown="ignore"))]
@@ -84,7 +84,7 @@ evaluate_model(pipe, X_test, y_test)
 # pickle.dump(pipe, open('churn_prediction\Classification_model_pipeline.pkl','wb'))
 
 # Prediction - input is pandas.DataFrame of shape (1,12)
-# y_df = pd.DataFrame(y)
-# predict123 = pipe.predict(X.iloc[[6292], :])
-# result123 = y_df.iloc[6292,0]
-# print(predict123, result123)
+y_df = pd.DataFrame(y)
+predict123 = pipe.predict(X.iloc[[6292]])
+result123 = y_df.iloc[6292,0]
+print(predict123[0], result123)

@@ -36,13 +36,13 @@ X = pd.concat([df[features]], axis=1)
 y = np.where(df["Attrition_Flag"] == "Attrited Customer", 1, 0)
 
 # Pipeline including preprocessing of numerical and categorical features and clustering model
-numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
+numeric_features = X.select_dtypes(include=['number']).columns.tolist()
 numeric_transformer = Pipeline(
     steps=[("imputer", SimpleImputer(strategy='mean')), 
            ("scaler", StandardScaler())]
 )
 
-categorical_features = X.select_dtypes(include=['object', 'bool']).columns.tolist()
+categorical_features = X.select_dtypes(exclude=['number']).columns.tolist()
 categorical_transformer = Pipeline(
     steps=[("imputer", SimpleImputer(strategy='most_frequent')),
            ("encoder", OneHotEncoder(handle_unknown="ignore"))]
