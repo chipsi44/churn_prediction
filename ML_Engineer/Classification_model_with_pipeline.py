@@ -21,7 +21,7 @@ import pickle
 
 # Import data from SQLite database and convert to pandas DataFrame
 def get_data_from_sqlite_db():
-    connexion = sqlite3.connect('churn_prediction\BankChurners.db')
+    connexion = sqlite3.connect('churn_prediction\data\BankChurners.db')
     query = "SELECT * FROM client"
     df = pd.read_sql_query(query, connexion)
     connexion.close()
@@ -81,7 +81,7 @@ def evaluate_model(pipe, X_test, y_test):
 evaluate_model(pipe, X_test, y_test)
 
 # Save model as a pickle file & put as a comment to avoid overwriting it afterwards
-# pickle.dump(pipe, open('churn_prediction\Classification_model_pipeline.pkl','wb'))
+# pickle.dump(pipe, open('churn_prediction\data\Classification_model_pipeline.pkl','wb'))
 
 # Prediction - input is pandas.DataFrame of shape (1,12)
 y_df = pd.DataFrame(y)
