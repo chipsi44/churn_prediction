@@ -43,6 +43,8 @@ After the formation of a team with a data engineer, a machine learning engineer,
 
 ## **Data Engineer part :** 
 
+**Written by Cyril Verwimp**
+
 ### **CSV to DB**
 The first step of the project is to obtain the data from this Kaggle [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers) . The data will then be transformed and loaded into a relational database for further analysis.
 
@@ -66,6 +68,8 @@ Here are the steps that were performed for the deployment :
 Actually Working !
 
 ## **Ml Engineer part :**
+
+**Written by Maïté Rolin**
 
 To address the business need, we decided to work with two different models, a classification model and a clustering model.\
 The classification model selected after testing of several models and parameters fine-tuning is a light GBM model. It is a fast, distributed, high-performance gradient boosting framework supported decision tree algorithm. Following features were used to fit the model: Total_Trans_Amt,Total_Trans_Ct, Total_Ct_Chng_Q4_Q1, Total_Amt_Chng_Q4_Q1, Total_Revolving_Bal, Credit_Limit, Months_on_book, Total_Relationship_Count, Avg_Utilization_Ratio, Contacts_Count_12_mon, Months_Inactive_12_mon and Dependent_count. All these features are bank-related numerical features. The Avg_Open_To_Buy and Customer_Age features where removed due to high correlation with Credit_Limit and Months_on_book.
@@ -96,7 +100,11 @@ Our suggestion to the marketing team is to target all the members of this cluste
 
 ## **Branch info :**
 
-To be done.
+### Main branch :
+This branch encompasses the code responsible for model creation and training, which has been exclusively developed and executed by our highly skilled ML engineer. All the relevant contributions by the said engineer are readily available on this branch.
+### Deployment branch :
+
+This branch is specifically dedicated to the deployment phase of our project, as indicated by its name. Our proficient data engineer has diligently carried out all the necessary tasks related to this phase. Render.com, our chosen hosting service provider, utilizes this branch to execute the rendering process for our website.
 
 ## **Web site visuals and explanation :**
 
