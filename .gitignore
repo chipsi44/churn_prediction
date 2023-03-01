@@ -1,10 +1,6 @@
 venv/
 BankChurners.csv
 BankChurners.db
-
-
-
-
 EDA.ipynb
 AMJar.py
 __pycache__
