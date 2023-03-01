@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Churn Prediction</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Churn Prediction : </a>
+    <a href="#ancre_form" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Form</a>
+    <a href="#ancre_dashboard" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Dashboard</a>
+    <a href="#ancre_cluster" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Clustering</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://github.com/chipsi44/churn_prediction" target="_blank">Github</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://becode.org/" target="_blank">BeCode</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#" target="_blank">Dockerhub</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank">Kaggle dataset</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 id="ancre_form" class="w3-text-teal">Form</h1>
+      <form id="my-form" action="/" method="post">
+        <div class="form-column">
+          <!-- Using the if prediction to keep the elem in my form, because I'm bad at Php and JS -->
+          {% if prediction %}
+          <label for="Total_Trans_Amt">Total Trans Amt</label>
+          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt" value = {{ args[0] }}>
+  
+          <label for="Total_Trans_Ct">Total Trans Ct</label>
+          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct" value = {{ args[1] }}>
+  
+          <label for="Total_Ct_Chng_Q4_Q1"> Total Ct Chng Q4_Q1</label>
+          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" value = {{ args[2] }}>
+  
+          <label for="Total_Amt_Chng_Q4_Q1">Total Amt Chng Q4_Q1</label>
+          <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1" value = {{ args[3] }}>
+  
+          <label for="Total_Revolving_Bal">Total Revolving Bal</label>
+          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal" value = {{ args[4] }}>
+  
+          <label for="Credit_Limit">Credit Limit</label>
+          <input type="float" id="Credit_Limit" name="Credit_Limit" value = {{ args[5] }}>
+  
+          
+        </div>
+        <div class="form-column">
+          <label for="Months_on_book">Months on book</label>
+          <input type="int" id="Months_on_book" name="Months_on_book" value = {{ args[6] }}>
+
+          <label for="Total_Relationship_Count">Total Relationship Count</label>
+          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count" value = {{ args[7] }}>
+  
+          <label for="Avg_Utilization_Ratio">Avg Utilization Ratio</label>
+          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" value = {{ args[8] }}>
+  
+          <label for="Contacts_Count_12_mon">Contacts Count 12 mon</label>
+          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" value = {{ args[9] }}>
+  
+          <label for="Months_Inactive_12_mon">Months Inactive 12 mon</label>
+          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" value = {{ args[10] }}>
+
+          <label for="Dependent_count">Dependent count</label>
+          <input type="int" id="Dependent_count" name="Dependent_count" value = {{ args[11] }}>
+        </div>
+          {% else %}
+          <label for="Total_Trans_Amt">Total Trans Amt</label>
+          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt">
+  
+          <label for="Total_Trans_Ct">Total Trans Ct</label>
+          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct">
+  
+          <label for="Total_Ct_Chng_Q4_Q1"> Total Ct Chng Q4_Q1</label>
+          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1">
+          
+          <label for="Total_Amt_Chng_Q4_Q1">Total Amt Chng Q4_Q1</label>
+          <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1">
+  
+          <label for="Total_Revolving_Bal">Total Revolving Bal</label>
+          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal">
+  
+          <label for="Credit_Limit">Credit Limit</label>
+          <input type="float" id="Credit_Limit" name="Credit_Limit">
+  
+        </div>
+        <div class="form-column">
+          
+          <label for="Months_on_book">Months on book</label>
+          <input type="int" id="Months_on_book" name="Months_on_book">
+  
+          <label for="Total_Relationship_Count">Total Relationship Count</label>
+          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count">
+  
+          <label for="Avg_Utilization_Ratio">Avg Utilization Ratio</label>
+          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio">
+  
+          <label for="Contacts_Count_12_mon">Contacts Count 12 mon</label>
+          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon">
+  
+          <label for="Months_Inactive_12_mon">Months Inactive 12 mon</label>
+          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon">
+
+          <label for="Dependent_count">Dependent count</label>
+          <input type="int" id="Dependent_count" name="Dependent_count">
+        </div>
+        {% endif %}
+        <div class="form-footer">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      {% if prediction %}
+      <h3>
+        The customer is part of the cluster {{ prediction_cluster }}, 
+        which has a churning rate of {{ cluster_rate }}% and is {{ prediction }} likely to churn.
+      </h3>
+      {% else %}
+    <h3>No prediction made at this time.</h3>
+      {% endif %}
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">
+        This form utilizes a AI-powered prediction model that has been trained on a dataset obtained from Kaggle. 
+        By leveraging advanced machine learning techniques, the model is able to accurately predict the likelihood of customer churn. 
+        Furthermore, it also determines the cluster in which the customer is located, providing valuable insights.
+      </p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">
+        Customer churn refers to the rate at which customers stop doing business
+        with a company or discontinue using its products or services
+      </p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 id ="ancre_dashboard" class="w3-text-teal">Dashboard</h1>
+      <div class='tableauPlaceholder' id='viz1677486081058' style='position: relative'><noscript><a href='#'><img alt='Insights and KPI&#39;s story ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;churn_prediction_16769651566900&#47;InsightsandKPIsstory&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='churn_prediction_16769651566900&#47;InsightsandKPIsstory' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;churn_prediction_16769651566900&#47;InsightsandKPIsstory&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div><script type='text/javascript'>                    var divElement = document.getElementById('viz1677486081058');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1250px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> 
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">Info about the Dashboard</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 id="ancre_cluster" class="w3-text-teal">Clustering</h1>
+      {% if prediction_cluster == 0 %}
+      <div class='tableauPlaceholder' id='viz1677576255456' style='position: relative'><noscript><a href='#'><img alt='Cluster 0 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster0&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster0' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster0&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576255456');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+       vizElement.style.width='1250px';vizElement.style.height='990px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      {% elif prediction_cluster == 1 %}
+      <div class='tableauPlaceholder' id='viz1677576348197' style='position: relative'><noscript><a href='#'><img alt='Cluster1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576348197');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+        vizElement.style.width='1250px';vizElement.style.height='990px';                   var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      {% elif prediction_cluster == 2 %}
+      <div class='tableauPlaceholder' id='viz1677576412419' style='position: relative'><noscript><a href='#'><img alt='Cluster2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576412419');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+          vizElement.style.width='1250px';vizElement.style.height='990px';                  var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      {% elif prediction_cluster == 3 %}
+      <div class='tableauPlaceholder' id='viz1677576468239' style='position: relative'><noscript><a href='#'><img alt='Cluster3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576468239');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+          vizElement.style.width='1250px';vizElement.style.height='990px';                var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      {% elif prediction_cluster == 4 %}
+      <div class='tableauPlaceholder' id='viz1677576527623' style='position: relative'><noscript><a href='#'><img alt='Cluster4 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576527623');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+           vizElement.style.width='1250px';vizElement.style.height='990px';              var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      {% elif prediction_cluster == 5 %}
+      <div class='tableauPlaceholder' id='viz1677576575475' style='position: relative'><noscript><a href='#'><img alt='Cluster5 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576575475');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+          vizElement.style.width='1250px';vizElement.style.height='990px';                 var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      {% else %}
+      <h3>No prediction made at this time.</h3>
+      {% endif %}
+      
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">
+        The visualizations displayed in the Tableau provide insightful data pertaining to the cluster in which our customer is situated.
+      </p>
+    </div>  
+  </div>
+
+ 
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>
+        Data Engineer :  <a href="https://www.linkedin.com/in/cyril-verwimp-8a0457208/" target="_blank">Cyril Verwimp</a> - 
+         ML Engineer : <a href="https://www.linkedin.com/in/ma%C3%AFt%C3%A9-r-71290613/" target="_blank">Maïté Rolin</a> - 
+         Data Analyst : <a href="https://www.linkedin.com/in/sacha-jumpertz-33ba3623b/" target="_blank">Sacha Jumpertz</a>
+        </h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>
+        Powered by <a href="https://becode.org/learn/ai-bootcamp/" target="_blank">BeCode AI team</a> and a 
+        <a href="https://www.w3schools.com/w3css/w3css_templates.asp" target="_blank">W3.CSS Templates</a>
+      </p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
