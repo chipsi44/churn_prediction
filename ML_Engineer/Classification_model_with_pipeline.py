@@ -1,23 +1,23 @@
 import numpy as np
 import pandas as pd
-import pickle
+
+import sqlite3
+
+from sklearn.model_selection import train_test_split
 
 from imblearn.over_sampling import RandomOverSampler
 
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
-from sklearn.model_selection import train_test_split
+from lightgbm import LGBMClassifier
 
 from sklearn.pipeline import Pipeline
 
 from sklearn.metrics import classification_report
 
-from lightgbm import LGBMClassifier
-
-import sqlite3
+import pickle
 
 # Import data from SQLite database and convert to pandas DataFrame
 def get_data_from_sqlite_db():
@@ -29,19 +29,19 @@ def get_data_from_sqlite_db():
 
 df = get_data_from_sqlite_db()
 
-# Predictives features
-features = ['Total_Trans_Amt','Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Total_Amt_Chng_Q4_Q1', 'Total_Revolving_Bal', 
-            'Credit_Limit', 'Months_on_book', 'Total_Relationship_Count', 'Avg_Utilization_Ratio', 
-            'Contacts_Count_12_mon', 'Months_Inactive_12_mon', 'Dependent_count']
+# Predictive features
+features = ['Total_Trans_Amt','Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Total_Amt_Chng_Q4_Q1', 
+            'Total_Revolving_Bal', 'Credit_Limit', 'Months_on_book', 'Total_Relationship_Count', 
+            'Avg_Utilization_Ratio', 'Contacts_Count_12_mon', 'Months_Inactive_12_mon', 'Dependent_count']
 
-# Isolate the feature to predict from the predictive features
+# Isolate the target from the predictive features
 X = pd.concat([df[features]], axis=1)
 y = np.where(df["Attrition_Flag"] == "Attrited Customer", 1, 0)
 
 # Split  database into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
-# Oversample minority category
+# Oversample minority category in the training set
 def dataset_balancing(X, y):
     oversample = RandomOverSampler(sampling_strategy="not majority")
     X_balanced, y_balanced = oversample.fit_resample(X, y)
@@ -49,6 +49,7 @@ def dataset_balancing(X, y):
 
 X_train, y_train = dataset_balancing(X_train, y_train)
 
+# Pipeline including preprocessing of numerical and categorical features and classification model
 numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
 numeric_transformer = Pipeline(
     steps=[("imputer", SimpleImputer(strategy='mean')), 
@@ -72,14 +73,15 @@ pipe = Pipeline([
 pipe.fit(X_train, y_train)
 pipe.score(X_test, y_test)
 
-# Saving model as a pickle file
-pickle.dump(pipe, open('churn_prediction\Classification_model_pipeline.pkl','wb'))
-
+# Evaluate the model
 def evaluate_model(pipe, X_test, y_test):
     y_pred = pipe.predict(X_test)
     print(classification_report(y_test, y_pred, target_names=["Not churning", "Churning"]))
 
 evaluate_model(pipe, X_test, y_test)
+
+# Save model as a pickle file & put as a comment to avoid overwriting it afterwards
+# pickle.dump(pipe, open('churn_prediction\Classification_model_pipeline.pkl','wb'))
 
 # Prediction - input is pandas.DataFrame of shape (1,12)
 # y_df = pd.DataFrame(y)
