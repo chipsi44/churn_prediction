@@ -18,7 +18,7 @@ import pickle
 
 # Import data from SQLite database and convert to pandas DataFrame
 def get_data_from_sqlite_db():
-    connexion = sqlite3.connect('churn_prediction\BankChurners.db')
+    connexion = sqlite3.connect('churn_prediction\data\BankChurners.db')
     query = "SELECT * FROM client"
     df = pd.read_sql_query(query, connexion)
     connexion.close()
@@ -88,7 +88,7 @@ def evaluate_model(pipe, X):
 evaluate_model(pipe, X)
 
 # Save the clustering model as a pickle file & put as a comment to avoid overwriting it afterwards
-# pickle.dump(pipe, open('churn_prediction\Clustering_model_pipeline.pkl','wb'))
+# pickle.dump(pipe, open('churn_prediction\data\Clustering_model_pipeline.pkl','wb'))
 
 # Save database for dashboard in Tableau & put as a comment to avoid overwriting it afterwards
-# X_labeled.to_csv('churn_prediction\BankChurnerswithCluster.csv', index=False)
+# X_labeled.to_csv('churn_prediction\data\BankChurnerswithCluster.csv', index=False)
