@@ -9,6 +9,22 @@ The churn rate is above 15% and increasing, the CEO urges the marketing team to 
 
 *The churn rate, also known as the rate of attrition or customer churn, is the rate at which customers stop doing business with an entity. It is most commonly expressed as the percentage of service subscribers who discontinue their subscriptions within a given time period.*
 
+## **How to ?** 
+
+After the formation of a team with a data engineer, a machine learning engineer, and a data analyst, it is essential to ensure collaboration between the members.
+
+**The data engineers :** 
+- Build a database from the customer data.
+- Deployment part.
+
+**The ML engineers :**
+- Predict those clients with more propensity to close their bank account with the financial institution.
+- Build machine learning models for classification and/or clustering.
+
+**The Data analysts :**
+- Build a dashboard with data insights and KPIs.
+- Create a tableau with tableau public.
+
 ## Data Engineer part
 
 ### CSV to DB
