@@ -48,6 +48,7 @@ Here are the steps that were performed for the deployment :
 * Perform thorough testing on the Docker image to ensure that all requirements are met, the prediction model functions correctly, and that the dashboard updates automatically.
 * Now that everything work we can deploy on render.com ! 
 ## **Data Analysts part :**
+**Written by : [Jumpertz Sacha](www.linkedin.com/in/sacha-jumpertz-33ba3623b)**
 
 The first step was to create dashboards which enables my team to visualize the data and insights of the effect of each variables on the attrition rate of clients. This was done in the following dashboards: [exploration Dashboard](https://public.tableau.com/views/churn_prediction_16769651566900/InsightsandKPIsstory?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link)
 
