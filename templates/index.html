@@ -42,7 +42,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <h4 class="w3-bar-item"><b>Menu</b></h4>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://github.com/chipsi44/churn_prediction" target="_blank">Github</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://becode.org/" target="_blank">BeCode</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#" target="_blank">Dockerhub</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank">Kaggle dataset</a>
 </nav>
 
@@ -52,97 +51,97 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
   
-  <h1>Churn prediction app ! </h1>
+  <h1>Churn risk analysis app ! </h1>
 
-  
-    <div class="w3-twothird w3-container">
-      <h1 id ="ancre_dashboard" class="w3-text-teal">Dashboard</h1>
+  <div class="w3-twothird w3-container" id="ancre_dashboard">
       <div class='tableauPlaceholder' id='viz1677486081058' style='position: relative'><noscript><a href='#'><img alt='Insights and KPI&#39;s story ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;churn_prediction_16769651566900&#47;InsightsandKPIsstory&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='churn_prediction_16769651566900&#47;InsightsandKPIsstory' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ch&#47;churn_prediction_16769651566900&#47;InsightsandKPIsstory&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div><script type='text/javascript'>                    var divElement = document.getElementById('viz1677486081058');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1250px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> 
   </div>
+
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 id="ancre_form" class="w3-text-teal">Form</h1>
+      <h1 id="ancre_form" class="w3-text-teal">Customer details</h1>
+      <p style="font-size:125%;">To receive a churn risk analysis for your customer, kindly complete the following form.</p>
       <form id="my-form" action="/" method="post">
         <div class="form-column">
           <!-- Using the if prediction to keep the elem in my form, because I'm bad at Php and JS -->
           {% if prediction %}
-          <label for="Total_Trans_Amt">Total Trans Amt</label>
+          <label for="Total_Trans_Amt">Total transaction amount (last 12 months)</label>
           <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt" value = {{ args[0] }}>
   
-          <label for="Total_Trans_Ct">Total Trans Ct</label>
+          <label for="Total_Trans_Ct">Total transaction count (last 12 months)</label>
           <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct" value = {{ args[1] }}>
   
-          <label for="Total_Ct_Chng_Q4_Q1"> Total Ct Chng Q4_Q1</label>
+          <label for="Total_Ct_Chng_Q4_Q1">Change in transaction count (Q4 over Q1)</label>
           <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" value = {{ args[2] }}>
   
-          <label for="Total_Amt_Chng_Q4_Q1">Total Amt Chng Q4_Q1</label>
+          <label for="Total_Amt_Chng_Q4_Q1">Change in transaction amount (Q4 over Q1)</label>
           <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1" value = {{ args[3] }}>
   
-          <label for="Total_Revolving_Bal">Total Revolving Bal</label>
+          <label for="Total_Revolving_Bal">Total revolving balance</label>
           <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal" value = {{ args[4] }}>
   
-          <label for="Credit_Limit">Credit Limit</label>
+          <label for="Credit_Limit"> Credit limit on credit cardt</label>
           <input type="float" id="Credit_Limit" name="Credit_Limit" value = {{ args[5] }}>
   
           
         </div>
         <div class="form-column">
-          <label for="Months_on_book">Months on book</label>
+          <label for="Months_on_book">Period of relationship with bank (in months) </label>
           <input type="int" id="Months_on_book" name="Months_on_book" value = {{ args[6] }}>
 
-          <label for="Total_Relationship_Count">Total Relationship Count</label>
+          <label for="Total_Relationship_Count">Total n° of products held by the customer</label>
           <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count" value = {{ args[7] }}>
   
-          <label for="Avg_Utilization_Ratio">Avg Utilization Ratio</label>
+          <label for="Avg_Utilization_Ratio">Average card utilization ratio</label>
           <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" value = {{ args[8] }}>
   
-          <label for="Contacts_Count_12_mon">Contacts Count 12 mon</label>
+          <label for="Contacts_Count_12_mon">N° of contacts (in the last 12 months)</label>
           <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" value = {{ args[9] }}>
   
-          <label for="Months_Inactive_12_mon">Months Inactive 12 mon</label>
+          <label for="Months_Inactive_12_mon">N° of months inactive (in the last 12 months)</label>
           <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" value = {{ args[10] }}>
 
-          <label for="Dependent_count">Dependent count</label>
+          <label for="Dependent_count">N° of dependents</label>
           <input type="int" id="Dependent_count" name="Dependent_count" value = {{ args[11] }}>
         </div>
           {% else %}
-          <label for="Total_Trans_Amt">Total Trans Amt</label>
+          <label for="Total_Trans_Amt">Total transaction amount (last 12 months)</label>
           <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt">
   
-          <label for="Total_Trans_Ct">Total Trans Ct</label>
+          <label for="Total_Trans_Ct">Total transaction count (last 12 months)</label>
           <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct">
   
-          <label for="Total_Ct_Chng_Q4_Q1"> Total Ct Chng Q4_Q1</label>
+          <label for="Total_Ct_Chng_Q4_Q1">Change in transaction count (Q4 over Q1)</label>
           <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1">
           
-          <label for="Total_Amt_Chng_Q4_Q1">Total Amt Chng Q4_Q1</label>
+          <label for="Total_Amt_Chng_Q4_Q1">Change in transaction amount (Q4 over Q1)</label>
           <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1">
   
-          <label for="Total_Revolving_Bal">Total Revolving Bal</label>
+          <label for="Total_Revolving_Bal">Total revolving balance</label>
           <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal">
   
-          <label for="Credit_Limit">Credit Limit</label>
+          <label for="Credit_Limit"> Credit limit on credit card</label>
           <input type="float" id="Credit_Limit" name="Credit_Limit">
   
         </div>
         <div class="form-column">
           
-          <label for="Months_on_book">Months on book</label>
+          <label for="Months_on_book">Period of relationship with bank (in months)</label>
           <input type="int" id="Months_on_book" name="Months_on_book">
   
-          <label for="Total_Relationship_Count">Total Relationship Count</label>
+          <label for="Total_Relationship_Count">Total n° of products held by the customer</label>
           <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count">
   
-          <label for="Avg_Utilization_Ratio">Avg Utilization Ratio</label>
+          <label for="Avg_Utilization_Ratio">Average card utilization ratio</label>
           <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio">
   
-          <label for="Contacts_Count_12_mon">Contacts Count 12 mon</label>
+          <label for="Contacts_Count_12_mon"> N° of contacts (in the last 12 months)</label>
           <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon">
   
-          <label for="Months_Inactive_12_mon">Months Inactive 12 mon</label>
+          <label for="Months_Inactive_12_mon">N° of months inactive (in the last 12 months)</label>
           <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon">
 
-          <label for="Dependent_count">Dependent count</label>
+          <label for="Dependent_count">N° of dependents</label>
           <input type="int" id="Dependent_count" name="Dependent_count">
         </div>
         {% endif %}
@@ -173,7 +172,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   </div>
 
   
-
+  {% if prediction %}
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 id="ancre_cluster" class="w3-text-teal">Clustering</h1>
@@ -195,9 +194,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       {% elif prediction_cluster == 5 %}
       <div class='tableauPlaceholder' id='viz1677576575475' style='position: relative'><noscript><a href='#'><img alt='Cluster5 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book3-churn_prediction-analyseclusters&#47;Cluster5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book3-churn_prediction-analyseclusters&#47;Cluster5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677576575475');                    var vizElement = divElement.getElementsByTagName('object')[0];                    
           vizElement.style.width='1250px';vizElement.style.height='990px';                 var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-      {% else %}
-      <h3>No prediction made at this time.</h3>
       {% endif %}
+  
       
     </div>
     <div class="w3-third w3-container">
@@ -206,7 +204,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       </p>
     </div>  
   </div>
-
+  {% endif %}
  
 
   <footer id="myFooter">
