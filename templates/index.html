@@ -66,83 +66,83 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
           <!-- Using the if prediction to keep the elem in my form, because I'm bad at Php and JS -->
           {% if prediction %}
           <label for="Total_Trans_Amt">Total transaction amount (last 12 months)</label>
-          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt" value = {{ args[0] }}>
+          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt" value = {{ args[0] }} required>
   
           <label for="Total_Trans_Ct">Total transaction count (last 12 months)</label>
-          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct" value = {{ args[1] }}>
+          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct" value = {{ args[1] }} required>
   
           <label for="Total_Ct_Chng_Q4_Q1">Change in transaction count (Q4 over Q1)</label>
-          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" value = {{ args[2] }}>
+          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" value = {{ args[2] }} required>
   
           <label for="Total_Amt_Chng_Q4_Q1">Change in transaction amount (Q4 over Q1)</label>
-          <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1" value = {{ args[3] }}>
+          <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1" value = {{ args[3] }} required>
   
           <label for="Total_Revolving_Bal">Total revolving balance</label>
-          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal" value = {{ args[4] }}>
+          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal" value = {{ args[4] }} required>
   
           <label for="Credit_Limit"> Credit limit on credit cardt</label>
-          <input type="float" id="Credit_Limit" name="Credit_Limit" value = {{ args[5] }}>
+          <input type="float" id="Credit_Limit" name="Credit_Limit" value = {{ args[5] }} required>
   
           
         </div>
         <div class="form-column">
           <label for="Months_on_book">Period of relationship with bank (in months) </label>
-          <input type="int" id="Months_on_book" name="Months_on_book" value = {{ args[6] }}>
+          <input type="int" id="Months_on_book" name="Months_on_book" value = {{ args[6] }} required>
 
           <label for="Total_Relationship_Count">Total n° of products held by the customer</label>
-          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count" value = {{ args[7] }}>
+          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count" value = {{ args[7] }} required>
   
           <label for="Avg_Utilization_Ratio">Average card utilization ratio</label>
-          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" value = {{ args[8] }}>
+          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" value = {{ args[8] }} required>
   
           <label for="Contacts_Count_12_mon">N° of contacts (in the last 12 months)</label>
-          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" value = {{ args[9] }}>
+          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" value = {{ args[9] }} required>
   
           <label for="Months_Inactive_12_mon">N° of months inactive (in the last 12 months)</label>
-          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" value = {{ args[10] }}>
+          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" value = {{ args[10] }} required>
 
           <label for="Dependent_count">N° of dependents</label>
-          <input type="int" id="Dependent_count" name="Dependent_count" value = {{ args[11] }}>
+          <input type="int" id="Dependent_count" name="Dependent_count" value = {{ args[11] }} required>
         </div>
           {% else %}
           <label for="Total_Trans_Amt">Total transaction amount (last 12 months)</label>
-          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt">
+          <input type="int" id="Total_Trans_Amt" name="Total_Trans_Amt" required>
   
           <label for="Total_Trans_Ct">Total transaction count (last 12 months)</label>
-          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct">
+          <input type="int" id="Total_Trans_Ct" name="Total_Trans_Ct" required>
   
           <label for="Total_Ct_Chng_Q4_Q1">Change in transaction count (Q4 over Q1)</label>
-          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1">
+          <input type="float" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" required>
           
           <label for="Total_Amt_Chng_Q4_Q1">Change in transaction amount (Q4 over Q1)</label>
-          <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1">
+          <input type="int" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1" required>
   
           <label for="Total_Revolving_Bal">Total revolving balance</label>
-          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal">
+          <input type="int" id="Total_Revolving_Bal" name="Total_Revolving_Bal" required>
   
           <label for="Credit_Limit"> Credit limit on credit card</label>
-          <input type="float" id="Credit_Limit" name="Credit_Limit">
+          <input type="float" id="Credit_Limit" name="Credit_Limit" required>
   
         </div>
         <div class="form-column">
           
           <label for="Months_on_book">Period of relationship with bank (in months)</label>
-          <input type="int" id="Months_on_book" name="Months_on_book">
+          <input type="int" id="Months_on_book" name="Months_on_book" required>
   
           <label for="Total_Relationship_Count">Total n° of products held by the customer</label>
-          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count">
+          <input type="int" id="Total_Relationship_Count" name="Total_Relationship_Count" required>
   
           <label for="Avg_Utilization_Ratio">Average card utilization ratio</label>
-          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio">
+          <input type="float" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" required>
   
           <label for="Contacts_Count_12_mon"> N° of contacts (in the last 12 months)</label>
-          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon">
+          <input type="int" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" required>
   
           <label for="Months_Inactive_12_mon">N° of months inactive (in the last 12 months)</label>
-          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon">
+          <input type="int" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" required>
 
           <label for="Dependent_count">N° of dependents</label>
-          <input type="int" id="Dependent_count" name="Dependent_count">
+          <input type="int" id="Dependent_count" name="Dependent_count" required>
         </div>
         {% endif %}
         <div class="form-footer">
