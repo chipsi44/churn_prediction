@@ -49,7 +49,11 @@ Here are the steps that were performed for the deployment :
 * Now that everything work we can deploy on render.com ! 
 ## **Data Analysts part :**
 
-Actually Working !
+The first step was to create dashboards which enables my team to visualize the data and insights of the effect of each variables on the attrition rate of clients. This was done in the following dashboards: [exploration Dashboard](https://public.tableau.com/views/churn_prediction_16769651566900/InsightsandKPIsstory?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link)
+
+After that, having received the results of my ML engineer, the analysis of the clusters had to be done. It was done in the following dashboards: [analysis of clusters](https://public.tableau.com/views/Book3-churn_prediction-analyseclusters/Clustersanalysis?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link)
+
+The data engineer also asked to have a distinct dashboard for each cluster to display after the prediction on the app. These dashboard can be fond there: [1 dashboard for each clusters](https://public.tableau.com/views/Book3-churn_prediction-analyseclusters/all_clusters?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link)
 
 ## **Ml Engineer part :**
 
