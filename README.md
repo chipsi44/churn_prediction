@@ -21,10 +21,10 @@ The churn rate is above 15% and increasing, the CEO urges the marketing team to 
 
 5. Deployment part.
 
-## **1. Database creation by [Cyril Verwimp]**
+## **1. Database creation by [Cyril Verwimp](https://www.linkedin.com/in/cyril-verwimp-8a0457208/)**
 The first step of the project is to obtain the data from this Kaggle [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers). The data is then transformed and loaded into a relational database for further analysis.
 
-## **2. Data insights by [Jumpertz Sacha]**
+## **2. Data insights by [Jumpertz Sacha](https://www.linkedin.com/in/sacha-jumpertz-33ba3623b/)**
 
 The database is used to create dashboards which enables my team to visualize the data and insights of the effect of each variable on the attrition rate of clients. The dashboards can be found here: [exploration Dashboard](https://public.tableau.com/views/churn_prediction_16769651566900/InsightsandKPIsstory?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link)
 
