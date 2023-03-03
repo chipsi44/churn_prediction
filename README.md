@@ -28,7 +28,7 @@ The first step of the project is to obtain the data from this Kaggle [dataset](h
 
 The database is used to create dashboards which enables my team to visualize the data and insights of the effect of each variable on the attrition rate of clients. The dashboards can be found here: [exploration Dashboard](https://public.tableau.com/views/churn_prediction_16769651566900/InsightsandKPIsstory?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link)
 
-## **3. Predictions by [Maïté Rolin]**
+## **3. Predictions by [Maïté Rolin](https://www.linkedin.com/in/ma%C3%AFt%C3%A9-r-71290613/)**
 
 To address the business need, we decided to work with two different models, a classification model and a clustering model.\
 The classification model selected after testing of several models and parameters fine-tuning is a light GBM model. It is a fast, distributed, high-performance gradient boosting framework supported decision tree algorithm. Following features were used to fit the model: Total_Trans_Amt,Total_Trans_Ct, Total_Ct_Chng_Q4_Q1, Total_Amt_Chng_Q4_Q1, Total_Revolving_Bal, Credit_Limit, Months_on_book, Total_Relationship_Count, Avg_Utilization_Ratio, Contacts_Count_12_mon, Months_Inactive_12_mon and Dependent_count. All these features are bank-related numerical features. The Avg_Open_To_Buy and Customer_Age features where removed due to high correlation with Credit_Limit and Months_on_book.
@@ -55,13 +55,13 @@ Our suggestion to the marketing team is to target all the members of this cluste
 
 <img src="Images/Cluster3_analysis.png" alt="drawing" width="700"/>
 
-## **4. Cluster insights by [Jumpertz Sacha]**
+## **4. Cluster insights by [Jumpertz Sacha](https://www.linkedin.com/in/sacha-jumpertz-33ba3623b/)**
 
 Based on the new database including the labels from the clustering modeling, the analysis of each cluster was done. Results can be found in the following dashboards: [analysis of clusters](https://public.tableau.com/views/Book3-churn_prediction-analyseclusters/Clustersanalysis?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link).
 
 A separate dashboard per cluster was also made to display on the app. These dashboards can be found there: [dashboard for each cluster](https://public.tableau.com/views/Book3-churn_prediction-analyseclusters/all_clusters?:language=fr-FR&publish=yes&:display_count=n&:origin=viz_share_link).
 
-## **5. Deployment by [Cyril Verwimp]** 
+## **5. Deployment by [Cyril Verwimp](https://www.linkedin.com/in/cyril-verwimp-8a0457208/)** 
 
 Here are the steps that were performed for the deployment :
 * Develop a website featuring a form that enables users to make predictions using the model. In addition, allocate space for the dashboard that will be provided by my data analyst.
