@@ -90,9 +90,9 @@ This branch encompasses the code responsible for model creation and training, wh
 
 This branch is specifically dedicated to the deployment phase of our project, as indicated by its name. Our proficient data engineer has diligently carried out all the necessary tasks related to this phase. Render.com, our chosen hosting service provider, utilizes this branch to execute the rendering process for our website.
 
-## **Web site visuals and explanation :**
+## **Link to the [website](https://churn-first-test.onrender.com/) :**
 
-To be done.
+https://churn-first-test.onrender.com/
 
 ## **Contributors :**
 - **Data Engineers :** [Cyril Verwimp](https://www.linkedin.com/in/cyril-verwimp-8a0457208/)
